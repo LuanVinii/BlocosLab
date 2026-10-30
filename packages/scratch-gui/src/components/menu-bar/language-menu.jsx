@@ -16,6 +16,8 @@ import stylesLanguageMenu from './language-menu.css';
 
 import dropdownCaret from './dropdown-caret.svg';
 
+const SUPPORTED_LOCALES = ['pt-br', 'en', 'es'];
+
 const languageMenu = defineMessage({
     id: 'gui.aria.languageMenu',
     defaultMessage: 'Language menu',
@@ -40,7 +42,7 @@ const LanguageMenu = ({
         menuRef
     } = useMenuNavigation({
         depth: depth ?? 1,
-        defaultIndexOnOpen: (Object.keys(locales).indexOf(currentLocale)),
+        defaultIndexOnOpen: SUPPORTED_LOCALES.indexOf(currentLocale),
         isRtl
     });
 
@@ -90,7 +92,7 @@ const LanguageMenu = ({
                 place={isRtl ? 'left' : 'right'}
             >
                 {
-                    Object.keys(locales)
+                    SUPPORTED_LOCALES
                         .map(locale => {
                             const isSelected = currentLocale === locale;
 

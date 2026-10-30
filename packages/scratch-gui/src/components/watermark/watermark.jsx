@@ -31,6 +31,7 @@ const Watermark = props => {
 
         positionImage();
         window.addEventListener('resize', positionImage);
+        wrapper.addEventListener('blocoslab:flyout-resize', positionImage);
         const resizeObserver = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(positionImage) : null;
         if (resizeObserver) {
             resizeObserver.observe(wrapper);
@@ -39,6 +40,7 @@ const Watermark = props => {
 
         return () => {
             window.removeEventListener('resize', positionImage);
+            wrapper.removeEventListener('blocoslab:flyout-resize', positionImage);
             if (resizeObserver) resizeObserver.disconnect();
         };
     }, []);

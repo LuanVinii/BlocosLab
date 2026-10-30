@@ -23,6 +23,7 @@ import CostumeLibrary from '../../containers/costume-library.jsx';
 import BackdropLibrary from '../../containers/backdrop-library.jsx';
 import KitRoboticaButton from '../kit-robotica/kit-robotica-button.jsx';
 import Watermark from '../../containers/watermark.jsx';
+import FlyoutResizeHandle from '../blocks/flyout-resize-handle.jsx';
 
 import Backpack from '../../containers/backpack.jsx';
 import ExtensionsButton from '../extension-button/extension-button.jsx';
@@ -503,6 +504,7 @@ const GUIComponent = props => {
                                             vm={vm}
                                             colorMode={colorMode}
                                         />
+                                        <FlyoutResizeHandle vm={vm} isVisible={blocksTabVisible} />
                                         <KitRoboticaButton vm={vm} />
                                         <Watermark
                                             className={styles.blocksWatermark}

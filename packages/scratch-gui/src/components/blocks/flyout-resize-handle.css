@@ -1,0 +1,31 @@
+.handle {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    cursor: col-resize;
+    touch-action: none;
+    user-select: none;
+}
+
+.handle::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 4px;
+    width: 2px;
+    background: transparent;
+    content: '';
+}
+
+.handle:hover::after,
+.handle:focus-visible::after,
+.dragging::after {
+    background: rgba(85, 90, 105, 0.45);
+}
+
+.handle:focus-visible {
+    outline: 2px solid #4c97ff;
+    outline-offset: -2px;
+}
