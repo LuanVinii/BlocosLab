@@ -1,0 +1,134 @@
+.container {
+    position: absolute;
+    right: 1.25rem;
+    top: .75rem;
+    z-index: 4;
+}
+
+.button {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    color: #74C7F4;
+    cursor: pointer;
+    display: flex;
+    font-family: Outfit, sans-serif;
+    font-weight: 800;
+    gap: .25rem;
+    min-height: 2.75rem;
+    padding: .25rem .5rem;
+}
+
+.button:disabled {
+    cursor: wait;
+    opacity: .7;
+}
+
+.button:focus-visible {
+    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #74C7F4;
+    outline: none;
+}
+
+.icon {
+    height: 2rem;
+    overflow: visible;
+    width: 3rem;
+}
+
+.motor,
+.shaft {
+    fill: none;
+    stroke: #74C7F4;
+    stroke-width: 2;
+}
+
+.gear {
+    fill: none;
+    stroke: #74C7F4;
+    stroke-width: 2;
+}
+
+.gearHole {
+    fill: #74C7F4;
+}
+
+.connectedSeal circle {
+    fill: #7BE0A0;
+}
+
+.connectedSeal path {
+    fill: none;
+    stroke: #1B1D36;
+    stroke-linecap: round;
+    stroke-width: 2;
+}
+
+.disconnectedSeal circle {
+    fill: #FFC857;
+}
+
+.disconnectedSeal path {
+    fill: none;
+    stroke: #1B1D36;
+    stroke-linecap: round;
+    stroke-width: 2;
+}
+
+.loadingSeal {
+    fill: none;
+    stroke: #74C7F4;
+    stroke-dasharray: 8 4;
+    stroke-width: 2;
+}
+
+.connectedText {
+    color: #7BE0A0;
+    white-space: nowrap;
+}
+
+.popover {
+    background: #FFFFFF;
+    border: 3px solid #74C7F4;
+    border-radius: .75rem;
+    box-shadow: 0 0.5rem 2rem rgb(27 29 54 / 35%);
+    color: #1B1D36;
+    min-width: 13rem;
+    padding: .75rem;
+    position: absolute;
+    right: 0;
+    top: 3rem;
+    z-index: 3;
+}
+
+.action {
+    background: #74C7F4;
+    border: 0;
+    border-radius: .35rem;
+    color: #1B1D36;
+    cursor: pointer;
+    font-weight: 800;
+    padding: .65rem 1rem;
+}
+
+.popover p {
+    margin: 0 0 .75rem;
+}
+
+.error {
+    background: #FFFFFF;
+    border: 1px solid #FFC857;
+    border-radius: .25rem;
+    color: #1B1D36;
+    font-size: .75rem;
+    left: 0;
+    padding: .25rem .5rem;
+    position: absolute;
+    top: 3rem;
+    white-space: nowrap;
+    z-index: 3;
+}
+
+.action:focus-visible {
+    box-shadow: 0 0 0 3px #1B1D36, 0 0 0 5px #74C7F4;
+    outline: none;
+}
