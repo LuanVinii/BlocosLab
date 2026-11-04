@@ -32,13 +32,6 @@
     color: $ui-white;
 }
 
-@media (max-height: 720px) {
-    .menu-bar,
-    .menu-bar-item {
-        height: 2.5rem;
-    }
-}
-
 .main-menu {
     display: flex;
     align-items: center;
@@ -278,6 +271,35 @@
 
     .file-actions .file-action span {
         display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .menu-bar {
+        overflow: hidden;
+    }
+
+    .main-menu {
+        gap: 0.25rem;
+    }
+
+    .navigation-actions,
+    .file-group,
+    .file-actions {
+        gap: 0.125rem;
+    }
+
+    .brand {
+        font-size: 0.95rem;
+    }
+
+    .file-actions .file-action {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .file-group .menu-bar-item {
+        padding: 0 0.2rem;
     }
 }
 

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React, {useEffect, useCallback, useState} from 'react';
 import {defineMessages, FormattedMessage, useIntl} from 'react-intl';
 import {connect} from 'react-redux';
-import MediaQuery from 'react-responsive';
+import MediaQuery, {useMediaQuery} from 'react-responsive';
 import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
 import tabStyles from 'react-tabs/style/react-tabs.css';
 import VM from '@scratch/scratch-vm';
@@ -34,7 +34,7 @@ import DragLayer from '../../containers/drag-layer.jsx';
 import ConnectionModal from '../../containers/connection-modal.jsx';
 import TelemetryModal from '../telemetry-modal/telemetry-modal.jsx';
 
-import layout, {STAGE_SIZE_MODES} from '../../lib/layout-constants';
+import layout, {STAGE_DISPLAY_SIZES, STAGE_SIZE_MODES} from '../../lib/layout-constants';
 import {resolveStageSize} from '../../lib/screen-utils';
 import {colorModeMap} from '../../lib/settings/color-mode/index.js';
 import {DEFAULT_THEME, themeMap} from '../../lib/settings/theme/index.js';
@@ -116,10 +116,12 @@ let isRendererSupported = null;
 const GUIComponent = props => {
     const intl = useIntl();
     const [showLoading, setShowLoading] = useState(props.loading);
+    const isShortScreen = useMediaQuery({maxHeight: 720});
+    const isMobile = useMediaQuery({maxWidth: 1023});
     useEffect(() => {
         if (props.loading) {
             setShowLoading(true);
-            return undefined;
+            return;
         }
         const timeoutId = setTimeout(() => setShowLoading(false), 4000);
         return () => clearTimeout(timeoutId);
@@ -262,7 +264,11 @@ const GUIComponent = props => {
     }
 
     return (<MediaQuery minWidth={layout.fullSizeMinWidth}>{isFullSize => {
-        const stageSize = resolveStageSize(stageSizeMode, isFullSize);
+        const stageSize = isMobile ?
+            STAGE_DISPLAY_SIZES.small :
+            isShortScreen ?
+                resolveStageSize(stageSizeMode, false) :
+                resolveStageSize(stageSizeMode, isFullSize);
         const boxStyles = classNames(styles.bodyWrapper, {
             [styles.bodyWrapperWithoutMenuBar]: menuBarHidden
         });

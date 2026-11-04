@@ -5,6 +5,13 @@
     display: flex;
     flex-direction: row;
     flex-grow: 1;
+    min-height: 0;
+}
+
+@media (max-width: 1023px) {
+    .target-pane {
+        min-width: 0;
+    }
 }
 
 .stage-selector-wrapper {
