@@ -117,7 +117,7 @@ const GUIComponent = props => {
     const intl = useIntl();
     const [showLoading, setShowLoading] = useState(props.loading);
     const isShortScreen = useMediaQuery({maxHeight: 720});
-    const isMobile = useMediaQuery({maxWidth: 1023});
+    const isMobile = useMediaQuery({maxWidth: layout.fullSizeMinWidth - 1});
     useEffect(() => {
         if (props.loading) {
             setShowLoading(true);

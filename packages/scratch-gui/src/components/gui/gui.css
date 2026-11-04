@@ -322,7 +322,7 @@ body .watermark {
     }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1095px) {
     .flex-wrapper {
         min-width: 0;
     }
@@ -344,7 +344,7 @@ body .watermark {
     }
 }
 
-@media (max-width: 1023px) and (orientation: portrait) {
+@media (max-width: 1095px) and (orientation: portrait) {
     .flex-wrapper {
         flex-direction: column;
     }
@@ -358,7 +358,7 @@ body .watermark {
     }
 }
 
-@media (max-width: 1023px) and (orientation: landscape) {
+@media (max-width: 1095px) and (orientation: landscape) {
     .flex-wrapper {
         flex-direction: row;
     }

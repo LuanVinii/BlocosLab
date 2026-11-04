@@ -8,7 +8,7 @@
     min-height: 0;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1095px) {
     .target-pane {
         min-width: 0;
     }
