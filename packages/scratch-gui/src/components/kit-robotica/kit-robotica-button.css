@@ -29,27 +29,27 @@
     outline: none;
 }
 
+.iconContainer {
+    display: inline-block;
+    height: 2.75rem;
+    position: relative;
+    width: 4.25rem;
+}
+
 .icon {
-    height: 2rem;
-    overflow: visible;
-    width: 3rem;
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
 }
 
-.motor,
-.shaft {
-    fill: none;
-    stroke: #74C7F4;
-    stroke-width: 2;
-}
-
-.gear {
-    fill: none;
-    stroke: #74C7F4;
-    stroke-width: 2;
-}
-
-.gearHole {
-    fill: #74C7F4;
+.connectedSeal,
+.disconnectedSeal,
+.loadingSeal {
+    height: .875rem;
+    right: 0;
+    position: absolute;
+    top: 0;
+    width: .875rem;
 }
 
 .connectedSeal circle {
@@ -75,10 +75,9 @@
 }
 
 .loadingSeal {
-    fill: none;
-    stroke: #74C7F4;
-    stroke-dasharray: 8 4;
-    stroke-width: 2;
+    background: #74C7F4;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
 }
 
 .connectedText {
@@ -126,6 +125,85 @@
     top: 3rem;
     white-space: nowrap;
     z-index: 3;
+}
+
+.disconnect-notice {
+    align-items: center;
+    background: #1B1D36;
+    border: 1px solid #74C7F4;
+    border-radius: .65rem;
+    box-shadow: 0 0.35rem 1rem rgb(27 29 54 / 28%);
+    color: #FFFFFF;
+    display: flex;
+    gap: .45rem;
+    opacity: 1;
+    padding: .55rem .65rem;
+    position: absolute;
+    right: calc(100% + .5rem);
+    top: 0;
+    transition: opacity .2s ease;
+    width: min(22rem, calc(100vw - 2rem));
+    z-index: 5;
+}
+
+.disconnect-notice-faded {
+    opacity: .25;
+    transition: opacity 1.5s ease;
+}
+
+.disconnect-notice:hover,
+.disconnect-notice:focus-within {
+    opacity: 1;
+    transition: opacity .2s ease;
+}
+
+.disconnect-notice-text {
+    flex: 1;
+    font-size: .78rem;
+    line-height: 1.2;
+}
+
+.disconnect-notice-reconnect,
+.disconnect-notice-close {
+    background: transparent;
+    border: 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font: inherit;
+}
+
+.disconnect-notice-reconnect {
+    background: #74C7F4;
+    border-radius: .35rem;
+    color: #1B1D36;
+    font-size: .75rem;
+    font-weight: 800;
+    padding: .45rem .6rem;
+    white-space: nowrap;
+}
+
+.disconnect-notice-close {
+    align-self: flex-start;
+    border-radius: .25rem;
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: .1rem .2rem;
+}
+
+.disconnect-notice-reconnect:focus-visible,
+.disconnect-notice-close:focus-visible {
+    outline: 2px solid #FFFFFF;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .disconnect-notice,
+    .disconnect-notice-faded,
+    .disconnect-notice:hover,
+    .disconnect-notice:focus-within {
+        transition: none;
+    }
 }
 
 .action:focus-visible {

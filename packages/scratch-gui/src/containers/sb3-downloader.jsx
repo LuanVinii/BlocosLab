@@ -34,7 +34,7 @@ class SB3Downloader extends React.Component {
                     types: [{
                         description: 'Projeto BlocosLab',
                         accept: {
-                            'application/octet-stream': ['.bl']
+                            'application/octet-stream': ['.blocs']
                         }
                     }]
                 });
@@ -77,7 +77,7 @@ const getProjectFilename = (curTitle, defaultTitle) => {
     if (!filenameTitle || filenameTitle.length === 0) {
         filenameTitle = defaultTitle;
     }
-    return `${filenameTitle.substring(0, 100)}.bl`;
+    return `${filenameTitle.substring(0, 100)}.blocs`;
 };
 
 SB3Downloader.propTypes = {

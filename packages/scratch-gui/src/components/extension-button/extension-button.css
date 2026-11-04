@@ -54,3 +54,9 @@ $fade-out-distance: 15px;
 .extension-button > div {
     margin-top: 0;
 }
+
+@media (max-height: 720px) {
+    .extension-button-container {
+        height: 2.75rem;
+    }
+}

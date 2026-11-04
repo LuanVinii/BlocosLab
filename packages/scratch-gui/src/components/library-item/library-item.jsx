@@ -59,6 +59,7 @@ class LibraryItemComponent extends React.PureComponent {
                 className={classNames(
                     styles.libraryItem,
                     styles.featuredItem,
+                    this.props.extensionId === 'kitrobotica' ? styles.kitRobotica : null,
                     {
                         [styles.disabled]: this.props.disabled
                     },
@@ -84,7 +85,13 @@ class LibraryItemComponent extends React.PureComponent {
                             </div>
                         ) : null}
                         {this.props.iconSource ? (
-                            this.renderImage(styles.featuredImage, this.props.iconSource)
+                            this.renderImage(
+                                classNames(
+                                    styles.featuredImage,
+                                    this.props.extensionId === 'kitrobotica' ? styles.kitRoboticaFeaturedImage : null
+                                ),
+                                this.props.iconSource
+                            )
                         ) : null}
                     </div>
                     {this.props.insetIconURL ? (

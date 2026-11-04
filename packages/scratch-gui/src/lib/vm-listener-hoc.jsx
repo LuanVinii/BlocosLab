@@ -223,6 +223,7 @@ const vmListenerHOC = function (WrappedComponent) {
         onTurboModeOn: () => dispatch(setTurboState(true)),
         onTurboModeOff: () => dispatch(setTurboState(false)),
         onShowExtensionAlert: data => {
+            if (data && data.extensionId === 'kitrobotica') return;
             dispatch(showExtensionAlert(data));
         },
         onMicListeningUpdate: listening => {

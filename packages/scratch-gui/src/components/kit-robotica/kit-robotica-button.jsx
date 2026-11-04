@@ -1,66 +1,31 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import VM from '@scratch/scratch-vm';
+import menuIconURI from './media/motor-menu-64.png';
 
 import styles from './kit-robotica-button.css';
 
 const KitIcon = ({state}) => (
-    <svg
-        aria-hidden="true"
-        className={styles.icon}
-        viewBox="0 0 48 32"
-    >
-        <rect
-            className={styles.motor}
-            height="20"
-            rx="3"
-            width="27"
-            x="5"
-            y="6"
-        />
-        <path
-            className={styles.shaft}
-            d="M32 16h9"
-        />
-        <circle
-            className={styles.gear}
-            cx="42"
-            cy="16"
-            r="5"
-        />
-        <circle
-            className={styles.gearHole}
-            cx="42"
-            cy="16"
-            r="2"
+    <span className={styles.iconContainer}>
+        <img
+            alt=""
+            className={styles.icon}
+            src={menuIconURI}
         />
         {state === 'connected' ? (
-            <g className={styles.connectedSeal}>
-                <circle
-                    cx="10"
-                    cy="7"
-                    r="7"
-                />
-                <path d="m6.5 7 2.2 2.2 4.8-5" />
-            </g>
+            <svg aria-hidden="true" className={styles.connectedSeal} viewBox="0 0 14 14">
+                <circle cx="7" cy="7" r="7" />
+                <path d="m3.5 7 2.2 2.2 4.8-5" />
+            </svg>
         ) : state === 'connecting' ? (
-            <circle
-                className={styles.loadingSeal}
-                cx="10"
-                cy="7"
-                r="6"
-            />
+            <span className={styles.loadingSeal} />
         ) : (
-            <g className={styles.disconnectedSeal}>
-                <circle
-                    cx="10"
-                    cy="7"
-                    r="7"
-                />
-                <path d="M10 3.5v5M10 11.5v.2" />
-            </g>
+            <svg aria-hidden="true" className={styles.disconnectedSeal} viewBox="0 0 14 14">
+                <circle cx="7" cy="7" r="7" />
+                <path d="M7 3.5v5M7 11.5v.2" />
+            </svg>
         )}
-    </svg>
+    </span>
 );
 
 KitIcon.propTypes = {
@@ -74,6 +39,8 @@ class KitRoboticaButton extends React.Component {
             connected: false,
             error: null,
             popoverOpen: false,
+            disconnectNoticeVisible: false,
+            disconnectNoticeFaded: false,
             ready: false,
             visible: false,
             state: 'disconnected'
@@ -89,6 +56,20 @@ class KitRoboticaButton extends React.Component {
         this.handleExtensionAdded = this.handleExtensionAdded.bind(this);
         this.handleOutsideClick = this.handleOutsideClick.bind(this);
         this.setPopoverRef = this.setPopoverRef.bind(this);
+        this.handleReconnectClick = this.handleReconnectClick.bind(this);
+        this.handleDismissDisconnectNotice = this.handleDismissDisconnectNotice.bind(this);
+        this.handleNoticeMouseEnter = this.handleNoticeMouseEnter.bind(this);
+        this.handleNoticeMouseLeave = this.handleNoticeMouseLeave.bind(this);
+        this.handleNoticeFocus = this.handleNoticeFocus.bind(this);
+        this.handleNoticeBlur = this.handleNoticeBlur.bind(this);
+        this.connectionActive = false;
+        this.disconnectPendingLoss = false;
+        this.disconnectNoticeDismissed = false;
+        this.disconnectNoticeFadeReady = false;
+        this.disconnectNoticeHovered = false;
+        this.disconnectNoticeFocused = false;
+        this.disconnectNoticeTimer = null;
+        this.disconnectNoticeFadeTimer = null;
     }
 
     componentDidMount () {
@@ -103,6 +84,7 @@ class KitRoboticaButton extends React.Component {
     }
 
     componentWillUnmount () {
+        this.clearDisconnectNoticeTimers();
         this.props.vm.removeListener('PERIPHERAL_CONNECTED', this.handleConnected);
         this.props.vm.removeListener('PERIPHERAL_DISCONNECTED', this.handleDisconnected);
         this.props.vm.removeListener('PERIPHERAL_REQUEST_ERROR', this.handleRequestError);
@@ -114,8 +96,11 @@ class KitRoboticaButton extends React.Component {
 
     updateVisibility () {
         const visible = this.props.vm.extensionManager.isExtensionLoaded('kitrobotica');
+        const connected = visible && this.props.vm.getPeripheralIsConnected('kitrobotica');
+        this.connectionActive = connected;
+        this.disconnectPendingLoss = false;
         this.setState({
-            connected: visible && this.props.vm.getPeripheralIsConnected('kitrobotica'),
+            connected,
             ready: visible,
             visible
         });
@@ -130,10 +115,27 @@ class KitRoboticaButton extends React.Component {
     }
 
     handleConnected () {
-        this.setState({connected: true, error: null, state: 'connected'});
+        this.connectionActive = true;
+        this.disconnectPendingLoss = false;
+        this.disconnectNoticeDismissed = false;
+        this.disconnectNoticeFadeReady = false;
+        this.disconnectNoticeHovered = false;
+        this.disconnectNoticeFocused = false;
+        this.clearDisconnectNoticeTimers();
+        this.setState({
+            connected: true,
+            disconnectNoticeVisible: false,
+            disconnectNoticeFaded: false,
+            error: null,
+            state: 'connected'
+        });
     }
 
     handleDisconnected () {
+        if (this.connectionActive) {
+            this.connectionActive = false;
+            this.disconnectPendingLoss = true;
+        }
         this.setState({connected: false, state: 'disconnected'});
     }
 
@@ -147,12 +149,73 @@ class KitRoboticaButton extends React.Component {
     }
 
     handleConnectionLost () {
-        this.setState({
-            connected: false,
-            error: 'O kit foi desconectado.',
-            state: 'disconnected'
-        });
-        window.setTimeout(() => this.setState({error: null}), 4000);
+        const hadConnectedTransition = this.connectionActive || this.disconnectPendingLoss;
+        this.connectionActive = false;
+        this.disconnectPendingLoss = false;
+        this.setState({connected: false, state: 'disconnected'});
+        if (hadConnectedTransition) this.showDisconnectNotice();
+    }
+
+    clearDisconnectNoticeTimers () {
+        if (this.disconnectNoticeTimer) window.clearTimeout(this.disconnectNoticeTimer);
+        if (this.disconnectNoticeFadeTimer) window.clearTimeout(this.disconnectNoticeFadeTimer);
+        this.disconnectNoticeTimer = null;
+        this.disconnectNoticeFadeTimer = null;
+    }
+
+    showDisconnectNotice () {
+        if (this.disconnectNoticeDismissed || this.state.disconnectNoticeVisible) return;
+        this.disconnectNoticeFadeReady = false;
+        this.setState({disconnectNoticeVisible: true, disconnectNoticeFaded: false});
+        this.disconnectNoticeTimer = window.setTimeout(() => {
+            this.disconnectNoticeFadeReady = true;
+            if (!this.disconnectNoticeHovered && !this.disconnectNoticeFocused && !this.disconnectNoticeDismissed) {
+                this.setState({disconnectNoticeFaded: true});
+            }
+        }, 6000);
+    }
+
+    scheduleDisconnectNoticeFade () {
+        if (!this.disconnectNoticeFadeReady || this.disconnectNoticeHovered || this.disconnectNoticeFocused) return;
+        if (this.disconnectNoticeFadeTimer) window.clearTimeout(this.disconnectNoticeFadeTimer);
+        this.disconnectNoticeFadeTimer = window.setTimeout(() => {
+            if (!this.disconnectNoticeHovered && !this.disconnectNoticeFocused && !this.disconnectNoticeDismissed) {
+                this.setState({disconnectNoticeFaded: true});
+            }
+        }, 1000);
+    }
+
+    emphasizeDisconnectNotice () {
+        if (this.disconnectNoticeFadeTimer) window.clearTimeout(this.disconnectNoticeFadeTimer);
+        this.disconnectNoticeFadeTimer = null;
+        this.setState({disconnectNoticeFaded: false});
+    }
+
+    handleNoticeMouseEnter () {
+        this.disconnectNoticeHovered = true;
+        this.emphasizeDisconnectNotice();
+    }
+
+    handleNoticeMouseLeave () {
+        this.disconnectNoticeHovered = false;
+        this.scheduleDisconnectNoticeFade();
+    }
+
+    handleNoticeFocus () {
+        this.disconnectNoticeFocused = true;
+        this.emphasizeDisconnectNotice();
+    }
+
+    handleNoticeBlur (event) {
+        if (event.currentTarget.contains(event.relatedTarget)) return;
+        this.disconnectNoticeFocused = false;
+        this.scheduleDisconnectNoticeFade();
+    }
+
+    handleDismissDisconnectNotice () {
+        this.disconnectNoticeDismissed = true;
+        this.clearDisconnectNoticeTimers();
+        this.setState({disconnectNoticeVisible: false});
     }
 
     handleButtonClick () {
@@ -167,6 +230,14 @@ class KitRoboticaButton extends React.Component {
     handleConnect () {
         this.setState({error: null, state: 'connecting'});
         this.props.vm.connectPeripheral('kitrobotica', 'web-bluetooth');
+    }
+
+    handleReconnectClick () {
+        this.setState({error: null, state: 'connecting'});
+        const extension = this.props.vm.runtime.peripheralExtensions.kitrobotica;
+        if (extension && typeof extension.connect === 'function') {
+            extension.connect();
+        }
     }
 
     handleDisconnect () {
@@ -217,6 +288,36 @@ class KitRoboticaButton extends React.Component {
                             type="button"
                         >
                             Desconectar
+                        </button>
+                    </div>
+                )}
+                {this.state.disconnectNoticeVisible && (
+                    <div
+                        aria-live="polite"
+                        className={`${styles.disconnectNotice} ${this.state.disconnectNoticeFaded ? styles.disconnectNoticeFaded : ''}`}
+                        onBlurCapture={this.handleNoticeBlur}
+                        onFocusCapture={this.handleNoticeFocus}
+                        onMouseEnter={this.handleNoticeMouseEnter}
+                        onMouseLeave={this.handleNoticeMouseLeave}
+                        role="status"
+                    >
+                        <span className={styles.disconnectNoticeText}>
+                            O BlocosLab perdeu a conexão com o Kit Robótica.
+                        </span>
+                        <button
+                            className={styles.disconnectNoticeReconnect}
+                            onClick={this.handleReconnectClick}
+                            type="button"
+                        >
+                            Reconectar
+                        </button>
+                        <button
+                            aria-label="Fechar aviso de desconexão"
+                            className={styles.disconnectNoticeClose}
+                            onClick={this.handleDismissDisconnectNotice}
+                            type="button"
+                        >
+                            ×
                         </button>
                     </div>
                 )}

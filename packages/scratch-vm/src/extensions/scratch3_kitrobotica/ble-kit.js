@@ -13,6 +13,7 @@ const createBleKit = ({onDisconnected} = {}) => {
     let writeCharacteristic = null;
     let notifyCharacteristic = null;
     let writeQueue = Promise.resolve();
+    let expectedDisconnect = false;
     const listeners = new Set();
 
     const handleNotification = event => {
@@ -23,6 +24,9 @@ const createBleKit = ({onDisconnected} = {}) => {
     };
 
     const disconnect = unexpected => {
+        if (!device) return;
+        const disconnectedDevice = device;
+        disconnectedDevice.removeEventListener('gattserverdisconnected', handleGattServerDisconnected);
         if (notifyCharacteristic) {
             notifyCharacteristic.removeEventListener('characteristicvaluechanged', handleNotification);
         }
@@ -31,9 +35,12 @@ const createBleKit = ({onDisconnected} = {}) => {
         service = null;
         writeCharacteristic = null;
         notifyCharacteristic = null;
+        expectedDisconnect = false;
         console.info('[Kit Robótica] desconectado do kit.');
         if (onDisconnected) onDisconnected(unexpected);
     };
+
+    const handleGattServerDisconnected = () => disconnect(!expectedDisconnect);
 
     const conectar = async () => {
         if (!navigator.bluetooth) {
@@ -48,23 +55,36 @@ const createBleKit = ({onDisconnected} = {}) => {
             ],
             optionalServices: [KIT_SERVICE_UUID]
         });
-        device.addEventListener('gattserverdisconnected', () => disconnect(true));
-        server = await device.gatt.connect();
-        service = await server.getPrimaryService(KIT_SERVICE_UUID);
-        writeCharacteristic = await service.getCharacteristic(KIT_INPUT_UUID);
-        notifyCharacteristic = await service.getCharacteristic(KIT_OUTPUT_UUID);
+        expectedDisconnect = false;
+        device.addEventListener('gattserverdisconnected', handleGattServerDisconnected);
+        try {
+            server = await device.gatt.connect();
+            service = await server.getPrimaryService(KIT_SERVICE_UUID);
+            writeCharacteristic = await service.getCharacteristic(KIT_INPUT_UUID);
+            notifyCharacteristic = await service.getCharacteristic(KIT_OUTPUT_UUID);
 
-        if (notifyCharacteristic) {
-            notifyCharacteristic.addEventListener('characteristicvaluechanged', handleNotification);
-            await notifyCharacteristic.startNotifications();
+            if (notifyCharacteristic) {
+                notifyCharacteristic.addEventListener('characteristicvaluechanged', handleNotification);
+                await notifyCharacteristic.startNotifications();
+            }
+        } catch (error) {
+            device.removeEventListener('gattserverdisconnected', handleGattServerDisconnected);
+            device = null;
+            server = null;
+            service = null;
+            writeCharacteristic = null;
+            notifyCharacteristic = null;
+            expectedDisconnect = false;
+            throw error;
         }
         console.info('[Kit Robótica] conectado ao kit.');
     };
 
     const desconectar = () => {
-        if (device && device.gatt.connected) {
-            device.gatt.disconnect();
-        }
+        if (!device) return;
+        const connectedDevice = device;
+        expectedDisconnect = true;
+        if (connectedDevice.gatt && connectedDevice.gatt.connected) connectedDevice.gatt.disconnect();
         disconnect(false);
     };
 

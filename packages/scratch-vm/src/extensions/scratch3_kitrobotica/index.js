@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 
 const {createBleKit} = require('./ble-kit');
+const {blockIconURI, menuIconURI} = require('./icons');
 const Cast = require('../../util/cast');
 const BlockType = {
     BOOLEAN: 'Boolean',
@@ -106,6 +107,8 @@ class KitRobotica {
             color1: '#74C7F4',
             color2: '#42A5D5',
             color3: '#2583B4',
+            blockIconURI,
+            menuIconURI,
             blocks: [
                 {
                     opcode: 'setMotorSpeed',

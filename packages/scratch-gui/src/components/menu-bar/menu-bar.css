@@ -32,6 +32,13 @@
     color: $ui-white;
 }
 
+@media (max-height: 720px) {
+    .menu-bar,
+    .menu-bar-item {
+        height: 2.5rem;
+    }
+}
+
 .main-menu {
     display: flex;
     align-items: center;
@@ -253,6 +260,17 @@
 }
 
 @container navigation (max-width: 78rem) {
+    .file-actions .file-action {
+        width: 2.5rem;
+        padding: 0;
+    }
+
+    .file-actions .file-action span {
+        display: none;
+    }
+}
+
+@media (max-width: 1280px) {
     .file-actions .file-action {
         width: 2.5rem;
         padding: 0;

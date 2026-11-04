@@ -125,6 +125,16 @@
     width: 100%;
 }
 
+.kit-robotica-featured-image {
+    aspect-ratio: 1;
+    display: block;
+    object-fit: cover;
+}
+
+.kit-robotica .library-item-inset-image-container {
+    background-color: #74C7F4;
+}
+
 .featured-text {
     font-weight: bold;
     padding: 10px;

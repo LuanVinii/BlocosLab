@@ -40,6 +40,27 @@
     stroke: none;
 }
 
+.blocks :global(.categoryBubble),
+.blocks :global(.scratchCategoryItemBubble),
+:global(.blocklyToolbox) :global(.categoryBubble),
+:global(.blocklyToolbox) :global(.scratchCategoryItemBubble),
+:global(.blocklyToolboxDiv) :global(.categoryBubble),
+:global(.blocklyToolboxDiv) :global(.scratchCategoryItemBubble) {
+    border: 0;
+    border-radius: 0;
+    height: 1.15rem;
+    width: 1.15rem;
+    filter: drop-shadow(0 1px 1px rgb(0 0 0 / 20%));
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='black' d='M10 6h8c1 0 2-1 2-2 0-5 8-5 8 0 0 1 1 2 2 2h8q4 0 4 4v7c0 1-1 2-2 2-5 0-5 8 0 8 1 0 2 1 2 2v9q0 4-4 4h-8c-1 0-2-1-2-2 0-5-8-5-8 0 0 1-1 2-2 2h-8q-4 0-4-4v-9c0-1-1-2-2-2-5 0-5-8 0-8 1 0 2-1 2-2v-7q0-4 4-4z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='black' d='M10 6h8c1 0 2-1 2-2 0-5 8-5 8 0 0 1 1 2 2 2h8q4 0 4 4v7c0 1-1 2-2 2-5 0-5 8 0 8 1 0 2 1 2 2v9q0 4-4 4h-8c-1 0-2-1-2-2 0-5-8-5-8 0 0 1-1 2-2 2h-8q-4 0-4-4v-9c0-1-1-2-2-2-5 0-5-8 0-8 1 0 2-1 2-2v-7q0-4 4-4z'/%3E%3C/svg%3E");
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
 /*
     TODO: Check if we still need both `blocklyToolbox` and `blocklyToolboxDiv`, and remove one if possible.
     Note that there are other places in this file which use both.
@@ -50,6 +71,7 @@
     border-bottom: 1px solid $ui-black-transparent;
     box-sizing: content-box;
     height: calc(100% - 3.25rem) !important;
+    min-height: 0;
 
     /*
         For now, the layout cannot support scrollbars in the category menu.
@@ -58,6 +80,13 @@
         same for Firefox, so a different solution may be needed for them.
     */
     -ms-overflow-style: none;
+}
+
+@media (max-height: 720px) {
+    .blocks :global(.blocklyToolbox),
+    .blocks :global(.blocklyToolboxDiv) {
+        height: calc(100% - 2.75rem) !important;
+    }
 }
 
 [dir="rtl"] .blocks :global(.blocklyToolbox),
