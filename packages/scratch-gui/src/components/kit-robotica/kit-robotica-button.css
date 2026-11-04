@@ -1,8 +1,14 @@
 .container {
     position: absolute;
-    right: 1.25rem;
-    top: .75rem;
+    right: calc(var(--stage-column-width, 30rem) + 1.25rem);
+    top: calc(3rem + 2.75rem + .75rem);
     z-index: 4;
+}
+
+@media (max-height: 720px) and (min-width: 916px) {
+    .container {
+        top: calc(2.5rem + 3rem + .75rem);
+    }
 }
 
 .button {

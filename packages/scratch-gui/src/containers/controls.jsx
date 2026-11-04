@@ -5,6 +5,7 @@ import VM from '@scratch/scratch-vm';
 import {connect} from 'react-redux';
 
 import ControlsComponent from '../components/controls/controls.jsx';
+import {setRunningState} from '../reducers/vm-status';
 
 class Controls extends React.Component {
     constructor (props) {
@@ -28,14 +29,16 @@ class Controls extends React.Component {
     handleStopAllClick (e) {
         e.preventDefault();
         this.props.vm.stopAll();
+        this.props.onStopProject();
     }
     render () {
         const {
-            vm,
-            isStarted,
+            vm: _vm,
+            isStarted: _isStarted,
             projectRunning,
             turbo,
             isFullScreen,
+            onStopProject: _onStopProject,
             ...props
         } = this.props;
         return (
@@ -56,6 +59,7 @@ Controls.propTypes = {
     isStarted: PropTypes.bool.isRequired,
     projectRunning: PropTypes.bool.isRequired,
     turbo: PropTypes.bool.isRequired,
+    onStopProject: PropTypes.func.isRequired,
     vm: PropTypes.instanceOf(VM)
 };
 
@@ -65,6 +69,8 @@ const mapStateToProps = state => ({
     turbo: state.scratchGui.vmStatus.turbo
 });
 // no-op function to prevent dispatch prop being passed to component
-const mapDispatchToProps = () => ({});
+const mapDispatchToProps = dispatch => ({
+    onStopProject: () => dispatch(setRunningState(false))
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Controls);

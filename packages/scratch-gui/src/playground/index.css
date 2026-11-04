@@ -9,16 +9,10 @@ body,
     min-width: 0;
     min-height: 0;
     overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: manipulation;
     background-color: #AD96DC;
 }
 
 /* @todo: move globally? Safe / side FX, for blocks particularly? */
 * { box-sizing: border-box; }
-
-@media (min-width: 1024px) {
-    html,
-    body,
-    .app {
-        min-width: 1024px;
-    }
-}

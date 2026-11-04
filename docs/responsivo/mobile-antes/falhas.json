@@ -1,0 +1,350 @@
+[
+  {
+    "size": "844x390",
+    "extension": "sem kit",
+    "element": "viewport",
+    "problem": "meta viewport ausente ou incorreta"
+  },
+  {
+    "size": "844x390",
+    "extension": "sem kit",
+    "element": "menu móvel",
+    "problem": "Preferências e Arquivo não estão em um único botão"
+  },
+  {
+    "size": "844x390",
+    "extension": "sem kit",
+    "element": "Propriedades",
+    "problem": "botão ausente"
+  },
+  {
+    "size": "844x390",
+    "extension": "sem kit",
+    "element": "run",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "844x390",
+    "extension": "sem kit",
+    "element": "stop",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "844x390",
+    "extension": "com kit",
+    "element": "viewport",
+    "problem": "meta viewport ausente ou incorreta"
+  },
+  {
+    "size": "844x390",
+    "extension": "com kit",
+    "element": "menu móvel",
+    "problem": "Preferências e Arquivo não estão em um único botão"
+  },
+  {
+    "size": "844x390",
+    "extension": "com kit",
+    "element": "Propriedades",
+    "problem": "botão ausente"
+  },
+  {
+    "size": "844x390",
+    "extension": "com kit",
+    "element": "run",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "844x390",
+    "extension": "com kit",
+    "element": "stop",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "915x412",
+    "extension": "sem kit",
+    "element": "viewport",
+    "problem": "meta viewport ausente ou incorreta"
+  },
+  {
+    "size": "915x412",
+    "extension": "sem kit",
+    "element": "menu móvel",
+    "problem": "Preferências e Arquivo não estão em um único botão"
+  },
+  {
+    "size": "915x412",
+    "extension": "sem kit",
+    "element": "Propriedades",
+    "problem": "botão ausente"
+  },
+  {
+    "size": "915x412",
+    "extension": "sem kit",
+    "element": "run",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "915x412",
+    "extension": "sem kit",
+    "element": "stop",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "915x412",
+    "extension": "com kit",
+    "element": "viewport",
+    "problem": "meta viewport ausente ou incorreta"
+  },
+  {
+    "size": "915x412",
+    "extension": "com kit",
+    "element": "menu móvel",
+    "problem": "Preferências e Arquivo não estão em um único botão"
+  },
+  {
+    "size": "915x412",
+    "extension": "com kit",
+    "element": "Propriedades",
+    "problem": "botão ausente"
+  },
+  {
+    "size": "915x412",
+    "extension": "com kit",
+    "element": "run",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "915x412",
+    "extension": "com kit",
+    "element": "stop",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "740x360",
+    "extension": "sem kit",
+    "element": "viewport",
+    "problem": "meta viewport ausente ou incorreta"
+  },
+  {
+    "size": "740x360",
+    "extension": "sem kit",
+    "element": "menu móvel",
+    "problem": "Preferências e Arquivo não estão em um único botão"
+  },
+  {
+    "size": "740x360",
+    "extension": "sem kit",
+    "element": "Propriedades",
+    "problem": "botão ausente"
+  },
+  {
+    "size": "740x360",
+    "extension": "sem kit",
+    "element": "run",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "740x360",
+    "extension": "sem kit",
+    "element": "stop",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "740x360",
+    "extension": "com kit",
+    "element": "viewport",
+    "problem": "meta viewport ausente ou incorreta"
+  },
+  {
+    "size": "740x360",
+    "extension": "com kit",
+    "element": "menu móvel",
+    "problem": "Preferências e Arquivo não estão em um único botão"
+  },
+  {
+    "size": "740x360",
+    "extension": "com kit",
+    "element": "Propriedades",
+    "problem": "botão ausente"
+  },
+  {
+    "size": "740x360",
+    "extension": "com kit",
+    "element": "run",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "740x360",
+    "extension": "com kit",
+    "element": "stop",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "667x375",
+    "extension": "sem kit",
+    "element": "viewport",
+    "problem": "meta viewport ausente ou incorreta"
+  },
+  {
+    "size": "667x375",
+    "extension": "sem kit",
+    "element": "stageSelector",
+    "problem": "ausente ou invisível"
+  },
+  {
+    "size": "667x375",
+    "extension": "sem kit",
+    "element": "menu móvel",
+    "problem": "Preferências e Arquivo não estão em um único botão"
+  },
+  {
+    "size": "667x375",
+    "extension": "sem kit",
+    "element": "Propriedades",
+    "problem": "botão ausente"
+  },
+  {
+    "size": "667x375",
+    "extension": "sem kit",
+    "element": "run",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "667x375",
+    "extension": "sem kit",
+    "element": "stop",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "667x375",
+    "extension": "com kit",
+    "element": "viewport",
+    "problem": "meta viewport ausente ou incorreta"
+  },
+  {
+    "size": "667x375",
+    "extension": "com kit",
+    "element": "stageSelector",
+    "problem": "ausente ou invisível"
+  },
+  {
+    "size": "667x375",
+    "extension": "com kit",
+    "element": "menu móvel",
+    "problem": "Preferências e Arquivo não estão em um único botão"
+  },
+  {
+    "size": "667x375",
+    "extension": "com kit",
+    "element": "Propriedades",
+    "problem": "botão ausente"
+  },
+  {
+    "size": "667x375",
+    "extension": "com kit",
+    "element": "run",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "667x375",
+    "extension": "com kit",
+    "element": "stop",
+    "problem": "alvo 36×36 px (<40)"
+  },
+  {
+    "size": "390x844",
+    "extension": "sem kit",
+    "element": "viewport",
+    "problem": "meta viewport ausente ou incorreta"
+  },
+  {
+    "size": "390x844",
+    "extension": "sem kit",
+    "element": "mobileNavigation",
+    "problem": "ausente ou invisível"
+  },
+  {
+    "size": "390x844",
+    "extension": "sem kit",
+    "element": "orientationNotice",
+    "problem": "ausente ou invisível"
+  },
+  {
+    "size": "390x844",
+    "extension": "sem kit",
+    "element": "navegação inferior",
+    "problem": "faltam as seções Código, Palco ou Atores"
+  },
+  {
+    "size": "390x844",
+    "extension": "com kit",
+    "element": "viewport",
+    "problem": "meta viewport ausente ou incorreta"
+  },
+  {
+    "size": "390x844",
+    "extension": "com kit",
+    "element": "mobileNavigation",
+    "problem": "ausente ou invisível"
+  },
+  {
+    "size": "390x844",
+    "extension": "com kit",
+    "element": "orientationNotice",
+    "problem": "ausente ou invisível"
+  },
+  {
+    "size": "390x844",
+    "extension": "com kit",
+    "element": "navegação inferior",
+    "problem": "faltam as seções Código, Palco ou Atores"
+  },
+  {
+    "size": "360x740",
+    "extension": "sem kit",
+    "element": "viewport",
+    "problem": "meta viewport ausente ou incorreta"
+  },
+  {
+    "size": "360x740",
+    "extension": "sem kit",
+    "element": "mobileNavigation",
+    "problem": "ausente ou invisível"
+  },
+  {
+    "size": "360x740",
+    "extension": "sem kit",
+    "element": "orientationNotice",
+    "problem": "ausente ou invisível"
+  },
+  {
+    "size": "360x740",
+    "extension": "sem kit",
+    "element": "navegação inferior",
+    "problem": "faltam as seções Código, Palco ou Atores"
+  },
+  {
+    "size": "360x740",
+    "extension": "com kit",
+    "element": "viewport",
+    "problem": "meta viewport ausente ou incorreta"
+  },
+  {
+    "size": "360x740",
+    "extension": "com kit",
+    "element": "mobileNavigation",
+    "problem": "ausente ou invisível"
+  },
+  {
+    "size": "360x740",
+    "extension": "com kit",
+    "element": "orientationNotice",
+    "problem": "ausente ou invisível"
+  },
+  {
+    "size": "360x740",
+    "extension": "com kit",
+    "element": "navegação inferior",
+    "problem": "faltam as seções Código, Palco ou Atores"
+  }
+]

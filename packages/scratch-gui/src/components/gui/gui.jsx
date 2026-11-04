@@ -392,7 +392,9 @@ const GUIComponent = props => {
                         />
                     </MenuRefProvider>
                     }
-                    <Box className={classNames(boxStyles, styles.flexWrapper)}>
+                    <Box
+                        className={classNames(boxStyles, styles.flexWrapper)}
+                    >
                         <Box
                             role="main"
                             aria-label={intl.formatMessage(ariaMessages.editor)}

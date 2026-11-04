@@ -1,0 +1,866 @@
+[
+  {
+    "size": "1920x940",
+    "extension": "sem kit",
+    "element": "actorList",
+    "problem": "cortado (1431,564–1831,945)"
+  },
+  {
+    "size": "1920x940",
+    "extension": "sem kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu 3 px (<6)"
+  },
+  {
+    "size": "1920x940",
+    "extension": "sem kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu 3 px (<6)"
+  },
+  {
+    "size": "1920x940",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1920x940",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1920x940",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1920x940",
+    "extension": "sem kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1920x940",
+    "extension": "com kit",
+    "element": "actorList",
+    "problem": "cortado (1431,564–1831,945)"
+  },
+  {
+    "size": "1920x940",
+    "extension": "com kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu 3 px (<6)"
+  },
+  {
+    "size": "1920x940",
+    "extension": "com kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu 3 px (<6)"
+  },
+  {
+    "size": "1920x940",
+    "extension": "com kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1920x940",
+    "extension": "com kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1920x940",
+    "extension": "com kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1920x940",
+    "extension": "com kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1536x740",
+    "extension": "sem kit",
+    "element": "actorList",
+    "problem": "cortado (1047,564–1447,745)"
+  },
+  {
+    "size": "1536x740",
+    "extension": "sem kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu 3 px (<6)"
+  },
+  {
+    "size": "1536x740",
+    "extension": "sem kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu 3 px (<6)"
+  },
+  {
+    "size": "1536x740",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1536x740",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1536x740",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1536x740",
+    "extension": "sem kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1536x740",
+    "extension": "com kit",
+    "element": "actorList",
+    "problem": "cortado (1047,564–1447,745)"
+  },
+  {
+    "size": "1536x740",
+    "extension": "com kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu 3 px (<6)"
+  },
+  {
+    "size": "1536x740",
+    "extension": "com kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu 3 px (<6)"
+  },
+  {
+    "size": "1536x740",
+    "extension": "com kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1536x740",
+    "extension": "com kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1536x740",
+    "extension": "com kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1536x740",
+    "extension": "com kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1440x700",
+    "extension": "sem kit",
+    "element": "actorList",
+    "problem": "cortado (955,552–1355,705)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "sem kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "sem kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "sem kit",
+    "element": "Código",
+    "problem": "alvo 313×32 px (<36)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "sem kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1440x700",
+    "extension": "com kit",
+    "element": "actorList",
+    "problem": "cortado (955,552–1355,705)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "com kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "com kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "com kit",
+    "element": "Código",
+    "problem": "alvo 313×32 px (<36)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "com kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "com kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "com kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1440x700",
+    "extension": "com kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1366x650",
+    "extension": "sem kit",
+    "element": "actorList",
+    "problem": "cortado (881,552–1281,655)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "sem kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "sem kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "sem kit",
+    "element": "Código",
+    "problem": "alvo 313×32 px (<36)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "sem kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1366x650",
+    "extension": "com kit",
+    "element": "actorList",
+    "problem": "cortado (881,552–1281,655)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "com kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "com kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "com kit",
+    "element": "Código",
+    "problem": "alvo 313×32 px (<36)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "com kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "com kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "com kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1366x650",
+    "extension": "com kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1366x630",
+    "extension": "sem kit",
+    "element": "actorList",
+    "problem": "cortado (881,552–1281,635)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "sem kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "sem kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "sem kit",
+    "element": "Código",
+    "problem": "alvo 313×32 px (<36)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "sem kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1366x630",
+    "extension": "com kit",
+    "element": "actorList",
+    "problem": "cortado (881,552–1281,635)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "com kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "com kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "com kit",
+    "element": "Código",
+    "problem": "alvo 313×32 px (<36)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "com kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "com kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "com kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1366x630",
+    "extension": "com kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1280x590",
+    "extension": "sem kit",
+    "element": "actorList",
+    "problem": "cortado (795,552–1195,595)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "sem kit",
+    "element": "actorThumbnail",
+    "problem": "cortado (803,560–873,624)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "sem kit",
+    "element": "lista de atores",
+    "problem": "altura 43 px (<64)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "sem kit",
+    "element": "miniatura do ator",
+    "problem": "não cabe inteira na lista"
+  },
+  {
+    "size": "1280x590",
+    "extension": "sem kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "sem kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "sem kit",
+    "element": "Código",
+    "problem": "alvo 313×32 px (<36)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "sem kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1280x590",
+    "extension": "com kit",
+    "element": "actorList",
+    "problem": "cortado (795,552–1195,595)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "com kit",
+    "element": "actorThumbnail",
+    "problem": "cortado (803,560–873,624)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "com kit",
+    "element": "lista de atores",
+    "problem": "altura 43 px (<64)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "com kit",
+    "element": "miniatura do ator",
+    "problem": "não cabe inteira na lista"
+  },
+  {
+    "size": "1280x590",
+    "extension": "com kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "com kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "com kit",
+    "element": "Código",
+    "problem": "alvo 313×32 px (<36)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "com kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "com kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "com kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1280x590",
+    "extension": "com kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1280x720",
+    "extension": "sem kit",
+    "element": "actorList",
+    "problem": "cortado (795,552–1195,725)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "sem kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "sem kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "sem kit",
+    "element": "Código",
+    "problem": "alvo 313×32 px (<36)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "sem kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1280x720",
+    "extension": "com kit",
+    "element": "actorList",
+    "problem": "cortado (795,552–1195,725)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "com kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "com kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "com kit",
+    "element": "Código",
+    "problem": "alvo 313×32 px (<36)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "com kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "com kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "com kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1280x720",
+    "extension": "com kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1024x576",
+    "extension": "sem kit",
+    "element": "actorList",
+    "problem": "cortado (611,496–939,579)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "sem kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "sem kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "sem kit",
+    "element": "Código",
+    "problem": "alvo 313×32 px (<36)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "sem kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1024x576",
+    "extension": "com kit",
+    "element": "actorList",
+    "problem": "cortado (611,496–939,579)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "com kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "com kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu -5 px (<6)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "com kit",
+    "element": "Código",
+    "problem": "alvo 313×32 px (<36)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "com kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "com kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "com kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1024x576",
+    "extension": "com kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1024x768",
+    "extension": "sem kit",
+    "element": "actorList",
+    "problem": "cortado (607,508–935,771)"
+  },
+  {
+    "size": "1024x768",
+    "extension": "sem kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu 3 px (<6)"
+  },
+  {
+    "size": "1024x768",
+    "extension": "sem kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu 3 px (<6)"
+  },
+  {
+    "size": "1024x768",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1024x768",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1024x768",
+    "extension": "sem kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1024x768",
+    "extension": "sem kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  },
+  {
+    "size": "1024x768",
+    "extension": "com kit",
+    "element": "actorList",
+    "problem": "cortado (607,508–935,771)"
+  },
+  {
+    "size": "1024x768",
+    "extension": "com kit",
+    "element": "Executar",
+    "problem": "distância da barra de menu 3 px (<6)"
+  },
+  {
+    "size": "1024x768",
+    "extension": "com kit",
+    "element": "Parar",
+    "problem": "distância da barra de menu 3 px (<6)"
+  },
+  {
+    "size": "1024x768",
+    "extension": "com kit",
+    "element": "Tamanho do palco 1",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1024x768",
+    "extension": "com kit",
+    "element": "Tamanho do palco 2",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1024x768",
+    "extension": "com kit",
+    "element": "Tamanho do palco 3",
+    "problem": "alvo 34×34 px (<36)"
+  },
+  {
+    "size": "1024x768",
+    "extension": "com kit",
+    "element": "categorias × área de código",
+    "problem": "elementos sobrepostos"
+  }
+]

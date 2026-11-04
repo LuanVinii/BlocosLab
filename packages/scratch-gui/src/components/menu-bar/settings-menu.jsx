@@ -99,11 +99,20 @@ const SettingsMenu = ({
             type="button"
             aria-expanded={isExpanded()}
             aria-label="Preferências"
+            title="Preferências"
             onClick={handleTogglePreferences}
         >
-            <img src={settingsIcon} alt="" aria-hidden="true" />
+            <img
+                src={settingsIcon}
+                alt=""
+                aria-hidden="true"
+            />
             <span className={styles.dropdownLabel}>Preferências</span>
-            <img src={dropdownCaret} alt="" aria-hidden="true" />
+            <img
+                src={dropdownCaret}
+                alt=""
+                aria-hidden="true"
+            />
         </button>
         <MenuBarMenu
             className={classNames(menuBarStyles.menuBarMenu, styles.preferencesDropdown)}
@@ -120,11 +129,17 @@ const SettingsMenu = ({
                     data-blocoslab-turbo="true"
                     isDataMenuItem
                     isSelected={turbo}
+                    // eslint-disable-next-line react/jsx-no-bind
                     onClick={handleToggleTurbo}
                 >
                     <span className={styles.turboRow}>
                         <span className={styles.turboLabel}>
-                            <img className={styles.icon} src={turboIcon} alt="" aria-hidden="true" />
+                            <img
+                                className={styles.icon}
+                                src={turboIcon}
+                                alt=""
+                                aria-hidden="true"
+                            />
                             <span>Modo turbo</span>
                         </span>
                         <span className={styles.turboState}>{turbo ? 'Ativado' : 'Desativado'}</span>

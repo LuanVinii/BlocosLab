@@ -167,6 +167,9 @@ class MenuBar extends React.Component {
     }
     render () {
         const menuOpts = this.props.accountMenuOptions;
+        const showSettings = this.props.canChangeColorMode ||
+            this.props.canChangeLanguage ||
+            this.props.canChangeTheme;
         return (
             <Box
                 className={classNames(
@@ -179,47 +182,48 @@ class MenuBar extends React.Component {
             >
                 <div className={styles.mainMenu}>
                     <div className={styles.navigationActions}>
-                    <div className={styles.fileGroup}>
-                        <button
-                            aria-label={this.props.intl.formatMessage(ariaMessages.home)}
-                            className={classNames(styles.menuBarItem)}
-                            onClick={this.props.onClickLogo}
-                        >
-                            <span
-                                aria-label="BlocosLab"
-                                className={classNames(styles.brand, {
-                                    [styles.clickable]: typeof this.props.onClickLogo !== 'undefined'
-                                })}
+                        <div className={styles.fileGroup}>
+                            <button
+                                aria-label={this.props.intl.formatMessage(ariaMessages.home)}
+                                className={classNames(styles.menuBarItem)}
+                                onClick={this.props.onClickLogo}
                             >
-                                <span className={styles.brandPrimary}>Blocos</span>
-                                <span className={styles.brandAccent}>Lab</span>
-                            </span>
-                        </button>
-                        {(this.props.canChangeColorMode || this.props.canChangeLanguage || this.props.canChangeTheme) &&
-                        (<SettingsMenu
-                            canChangeLanguage={this.props.canChangeLanguage}
-                            canChangeColorMode={false}
-                            canChangeTheme={false}
-                            hasActiveMembership={this.props.hasActiveMembership}
-                            isRtl={this.props.isRtl}
-                            depth={1}
+                                <span
+                                    aria-label="BlocosLab"
+                                    className={classNames(styles.brand, {
+                                        [styles.clickable]: typeof this.props.onClickLogo !== 'undefined'
+                                    })}
+                                >
+                                    <span className={styles.brandPrimary}>Blocos</span>
+                                    <span className={styles.brandAccent}>Lab</span>
+                                </span>
+                            </button>
+                            {showSettings && (
+                                <SettingsMenu
+                                    canChangeLanguage={this.props.canChangeLanguage}
+                                    canChangeColorMode={false}
+                                    canChangeTheme={false}
+                                    hasActiveMembership={this.props.hasActiveMembership}
+                                    isRtl={this.props.isRtl}
+                                    depth={1}
+                                />
+                            )}
+                            {this.props.isTotallyNormal && (<ModeMenu
+                                onSetMode={this.handleSetMode}
+                                modeNow={this.props.modeNow}
+                                mode2020={this.props.mode2020}
+                                isRtl={this.props.isRtl}
+                                depth={1}
+                            />)}
+                        </div>
+                        {(this.props.canManageFiles) && (<FileMenu
+                            onStartSelectingFileUpload={this.props.onStartSelectingFileUpload}
+                            onClickNew={this.handleClickNew}
+                            onClickRemix={this.props.onClickRemix}
+                            onClickSave={this.props.onClickSave}
+                            getSaveToComputerHandler={this.getSaveToComputerHandler}
+                            canSave={this.props.canSave}
                         />)}
-                        {this.props.isTotallyNormal && (<ModeMenu
-                            onSetMode={this.handleSetMode}
-                            modeNow={this.props.modeNow}
-                            mode2020={this.props.mode2020}
-                            isRtl={this.props.isRtl}
-                            depth={1}
-                        />)}
-                    </div>
-                    {(this.props.canManageFiles) && (<FileMenu
-                        onStartSelectingFileUpload={this.props.onStartSelectingFileUpload}
-                        onClickNew={this.handleClickNew}
-                        onClickRemix={this.props.onClickRemix}
-                        onClickSave={this.props.onClickSave}
-                        getSaveToComputerHandler={this.getSaveToComputerHandler}
-                        canSave={this.props.canSave}
-                    />)}
                     </div>
                 </div>
 
@@ -379,11 +383,8 @@ MenuBar.propTypes = {
     canChangeLanguage: PropTypes.bool,
     canChangeColorMode: PropTypes.bool,
     canChangeTheme: PropTypes.bool,
-    canCreateCopy: PropTypes.bool,
     canCreateNew: PropTypes.bool,
-    canEditTitle: PropTypes.bool,
     canManageFiles: PropTypes.bool,
-    canRemix: PropTypes.bool,
     canSave: PropTypes.bool,
     className: PropTypes.string,
     confirmReadyToReplaceProject: PropTypes.func,
