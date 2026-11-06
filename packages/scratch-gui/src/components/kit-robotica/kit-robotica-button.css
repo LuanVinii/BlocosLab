@@ -1,6 +1,6 @@
 .container {
     position: absolute;
-    right: calc(var(--stage-column-width, 30rem) + 1.25rem);
+    right: 1.25rem;
     top: calc(3rem + 2.75rem + .75rem);
     z-index: 4;
 }
