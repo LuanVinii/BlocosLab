@@ -126,7 +126,7 @@
 }
 
 .kit-robotica-featured-image {
-    aspect-ratio: 1;
+    aspect-ratio: 50 / 31;
     display: block;
     object-fit: cover;
 }

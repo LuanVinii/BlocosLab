@@ -40,12 +40,6 @@
     stroke: none;
 }
 
-@media (max-width: 915px) {
-    .blocks :global(.injectionDiv) {
-        touch-action: none;
-    }
-}
-
 .blocks :global(.categoryBubble),
 .blocks :global(.scratchCategoryItemBubble),
 :global(.blocklyToolbox) :global(.categoryBubble),
@@ -77,7 +71,6 @@
     border-bottom: 1px solid $ui-black-transparent;
     box-sizing: content-box;
     height: calc(100% - 3.25rem) !important;
-    min-height: 0;
 
     /*
         For now, the layout cannot support scrollbars in the category menu.
@@ -86,13 +79,6 @@
         same for Firefox, so a different solution may be needed for them.
     */
     -ms-overflow-style: none;
-}
-
-@media (max-height: 720px) {
-    .blocks :global(.blocklyToolbox),
-    .blocks :global(.blocklyToolboxDiv) {
-        height: calc(100% - 2.75rem) !important;
-    }
 }
 
 [dir="rtl"] .blocks :global(.blocklyToolbox),
