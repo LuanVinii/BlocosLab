@@ -274,7 +274,6 @@ class KitRoboticaButton extends React.Component {
                     type="button"
                 >
                     <KitIcon state={state} />
-                    {this.state.connected && <span className={styles.connectedText}>Conectado</span>}
                 </button>
                 {this.state.connected && this.state.popoverOpen && (
                     <div
