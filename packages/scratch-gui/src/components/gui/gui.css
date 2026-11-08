@@ -258,7 +258,7 @@
     padding-right: $space;
 
     /* this will only ever be as wide as the stage */
-    flex: 0 0 clamp(424px, 40vw, 760px);
+    flex: 0 0 clamp(492px, 32vw, 650px);
     min-width: 0;
     min-height: 0;
 }
