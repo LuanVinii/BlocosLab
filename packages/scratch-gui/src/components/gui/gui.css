@@ -342,6 +342,43 @@ body .watermark {
     }
 }
 
+@media (min-width: 1096px) and (max-width: 1280px) {
+    .target-wrapper :global([class*="sprite-info_sprite-info"]) {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 0.35rem;
+    }
+
+    .target-wrapper :global([class*="sprite-info_row-primary"]) {
+        display: grid;
+        grid-template-columns: minmax(8rem, 1.4fr) repeat(2, minmax(4.5rem, 1fr));
+        align-items: center;
+        gap: 0.25rem;
+        margin-bottom: 0;
+    }
+
+    .target-wrapper :global([class*="sprite-info_row-secondary"]) {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .target-wrapper :global([class*="sprite-info_group"]) {
+        min-width: 0;
+    }
+
+    .target-wrapper :global([class*="sprite-input"]) {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .target-wrapper :global([class*="larger-input"]) input {
+        width: 3.5rem;
+    }
+}
+
 @media (max-width: 1095px) and (orientation: portrait) {
     .flex-wrapper {
         flex-direction: column;
