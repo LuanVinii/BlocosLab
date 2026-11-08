@@ -40,6 +40,12 @@
     stroke: none;
 }
 
+@media (max-width: 915px) {
+    .blocks :global(.injectionDiv) {
+        touch-action: none;
+    }
+}
+
 .blocks :global(.categoryBubble),
 .blocks :global(.scratchCategoryItemBubble),
 :global(.blocklyToolbox) :global(.categoryBubble),

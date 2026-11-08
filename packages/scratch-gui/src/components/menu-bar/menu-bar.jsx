@@ -109,8 +109,10 @@ class MenuBar extends React.Component {
             'handleClickNew',
             'handleSetMode',
             'handleKeyPress',
+            'handleToggleMobileMenu',
             'getSaveToComputerHandler'
         ]);
+        this.state = {mobileMenuOpen: false};
     }
     componentDidMount () {
         document.addEventListener('keydown', this.handleKeyPress);
@@ -154,6 +156,9 @@ class MenuBar extends React.Component {
             this.props.onClickSave();
             event.preventDefault();
         }
+    }
+    handleToggleMobileMenu () {
+        this.setState(state => ({mobileMenuOpen: !state.mobileMenuOpen}));
     }
     getSaveToComputerHandler (downloadProjectCallback) {
         return async () => {
@@ -224,6 +229,48 @@ class MenuBar extends React.Component {
                             getSaveToComputerHandler={this.getSaveToComputerHandler}
                             canSave={this.props.canSave}
                         />)}
+                    <div className={styles.mobileMenuContainer}>
+                        <button
+                            aria-expanded={this.state.mobileMenuOpen}
+                            aria-label="Abrir menu"
+                            className={styles.mobileMenuButton}
+                            data-testid="mobile-menu-button"
+                            type="button"
+                            onClick={this.handleToggleMobileMenu}
+                        >
+                            <span aria-hidden="true">☰</span>
+                            <span>Menu</span>
+                        </button>
+                        {this.state.mobileMenuOpen && (
+                            <div className={styles.mobileMenuPanel}>
+                                {showSettings && (
+                                    <section>
+                                        <SettingsMenu
+                                            canChangeLanguage={this.props.canChangeLanguage}
+                                            canChangeColorMode={false}
+                                            canChangeTheme={false}
+                                            hasActiveMembership={this.props.hasActiveMembership}
+                                            isRtl={this.props.isRtl}
+                                            depth={1}
+                                        />
+                                    </section>
+                                )}
+                                {this.props.canManageFiles && (
+                                    <section>
+                                        <h2 className={styles.mobileMenuHeading}>Arquivo</h2>
+                                        <FileMenu
+                                            onStartSelectingFileUpload={this.props.onStartSelectingFileUpload}
+                                            onClickNew={this.handleClickNew}
+                                            onClickRemix={this.props.onClickRemix}
+                                            onClickSave={this.props.onClickSave}
+                                            getSaveToComputerHandler={this.getSaveToComputerHandler}
+                                            canSave={this.props.canSave}
+                                        />
+                                    </section>
+                                )}
+                            </div>
+                        )}
+                    </div>
                     </div>
                 </div>
 
