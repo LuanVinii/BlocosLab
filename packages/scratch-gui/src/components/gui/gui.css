@@ -54,9 +54,7 @@
         much better ways to solve that (e.g. undo #2124, remove this flex-basis entirely). However, they run their own
         risks of breaking things, so let's just leave this as-is for the time being.
     */
-    flex-basis: calc(1024px - 408px - (($space + $stage-standard-border-width) * 2));
-    flex-grow: 1;
-    flex-shrink: 0;
+    flex: 1 1 0;
     position: relative;
     min-width: 0;
     min-height: 0;
@@ -260,7 +258,7 @@
     padding-right: $space;
 
     /* this will only ever be as wide as the stage */
-    flex-basis: 0;
+    flex: 0 0 clamp(424px, 40vw, 760px);
     min-width: 0;
     min-height: 0;
 }
