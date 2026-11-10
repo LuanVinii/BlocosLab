@@ -49,6 +49,7 @@ export default {
     standardStageWidth: 480,
     standardStageHeight: 360,
     fullSizeMinWidth: 1096,
+    fullSizeMinHeight: 632,
     fullSizePaintMinWidth: 1250
 };
 

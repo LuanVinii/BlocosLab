@@ -261,7 +261,7 @@ const GUIComponent = props => {
         isRendererSupported = Renderer.isSupported();
     }
 
-    return (<MediaQuery minWidth={layout.fullSizeMinWidth}>{isFullSize => {
+    return (<MediaQuery minWidth={layout.fullSizeMinWidth} minHeight={layout.fullSizeMinHeight}>{isFullSize => {
         const stageSize = resolveStageSize(stageSizeMode, isFullSize);
         const boxStyles = classNames(styles.bodyWrapper, {
             [styles.bodyWrapperWithoutMenuBar]: menuBarHidden
