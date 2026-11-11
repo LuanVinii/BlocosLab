@@ -1,5 +1,36 @@
 [
     {
+        "name": "Robô",
+        "tags": [
+            "robô",
+            "robot",
+            "tecnologia",
+            "blocoslab"
+        ],
+        "isStage": false,
+        "costumes": [
+            {
+                "name": "Robô",
+                "assetId": "52d62fbe8fbb225e3a891dd081d41ce3",
+                "md5ext": "52d62fbe8fbb225e3a891dd081d41ce3.png",
+                "dataFormat": "png",
+                "bitmapResolution": 2,
+                "rotationCenterX": 119.5,
+                "rotationCenterY": 180,
+                "rawURL": "/static/assets/blocoslab-robo.png",
+                "tags": [
+                    "robô",
+                    "robot",
+                    "tecnologia",
+                    "blocoslab"
+                ]
+            }
+        ],
+        "sounds": [],
+        "variables": {},
+        "blocks": {}
+    },
+    {
         "name": "Abby",
         "tags": [
             "people",

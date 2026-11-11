@@ -99,7 +99,7 @@
 }
 
 .visible-code-tab {
-    flex: 0 0 250px;
+    flex: 0 0 313px;
 }
 
 .hidden-tab {
@@ -114,6 +114,85 @@
     list-style: none;
     min-width: 5rem;
     padding: 0 1.25rem 0.3rem 0;
+}
+
+.execution-capsule {
+    position: absolute;
+    top: 0.875rem;
+    right: 1.5rem;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.4rem 1rem;
+    border: 2px solid #e4e9f4;
+    border-radius: 999px;
+    background: $ui-white;
+    box-shadow: 0 2px 8px rgb(27 29 54 / 12%);
+}
+
+.execution-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.execution-controls > button:first-child,
+.execution-controls > button:nth-child(2) {
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+}
+
+.execution-controls > button:first-child {
+    background: #ddf4e4;
+}
+
+.execution-controls > button:nth-child(2) {
+    background: #fce2e5;
+}
+
+.execution-controls > button:first-child:hover {
+    background: #c8ecd3;
+    box-shadow: 0 0 0 3px rgb(47 158 83 / 20%);
+    transform: scale(1.02);
+}
+
+.execution-controls > button:nth-child(2):hover {
+    background: #f7ccd1;
+    box-shadow: 0 0 0 3px rgb(224 82 98 / 20%);
+    transform: scale(1.02);
+}
+
+.execution-controls > button:first-child:active,
+.execution-controls > button:nth-child(2):active {
+    transform: scale(0.96);
+    box-shadow: none;
+}
+
+.execution-controls > button:focus-visible {
+    outline: 2px solid #2f9e53;
+    outline-offset: 2px;
+}
+
+.execution-controls > button:first-child img,
+.execution-controls > button:nth-child(2) img {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .execution-controls > button:first-child,
+    .execution-controls > button:nth-child(2) {
+        transition: none;
+    }
 }
 
 [dir="ltr"] .tab {

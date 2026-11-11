@@ -154,7 +154,7 @@
     transform: rotate(90deg);
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 480px) {
     .dropdown-label {
         display: none;
     }

@@ -11,6 +11,16 @@ import faceSensingInsetIconURL from './faceSensing/faceSensing-small.svg';
 
 export default [
     {
+        name: 'Kit Robótica',
+        extensionId: 'kitrobotica',
+        iconURL: kitRoboticaCoverURL,
+        insetIconURL: kitRoboticaIconURL,
+        description: 'Controle o kit por Bluetooth.',
+        collaborator: 'BlocosLab',
+        bluetoothRequired: true,
+        featured: true
+    },
+    {
         name: 'Música',
         extensionId: 'music',
         iconURL: musicIconURL,
@@ -40,15 +50,6 @@ export default [
         iconURL: faceSensingIconURL,
         insetIconURL: faceSensingInsetIconURL,
         description: 'Detecte rostos com a câmera.',
-        featured: true
-    },
-    {
-        name: 'Kit Robótica',
-        extensionId: 'kitrobotica',
-        iconURL: kitRoboticaCoverURL,
-        insetIconURL: kitRoboticaIconURL,
-        description: 'Controle o kit por Bluetooth.',
-        bluetoothRequired: true,
         featured: true
     }
 ];

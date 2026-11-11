@@ -31,12 +31,13 @@ const projectData = (translateFunction?: TranslatorFunction): object => {
                 currentCostume: 0,
                 costumes: [
                     {
-                        assetId: 'cd21514d0531fdffb22204e0ec5ed84a',
-                        name: translator(messages.backdrop, {index: 1}),
-                        md5ext: 'cd21514d0531fdffb22204e0ec5ed84a.svg',
-                        dataFormat: 'svg',
-                        rotationCenterX: 240,
-                        rotationCenterY: 180
+                        assetId: '91dc085aa42f8accb73026491509ee95',
+                        name: 'Laboratório Espacial',
+                        md5ext: '91dc085aa42f8accb73026491509ee95.png',
+                        dataFormat: 'png',
+                        bitmapResolution: 2,
+                        rotationCenterX: 480,
+                        rotationCenterY: 360
                     }
                 ],
                 sounds: [],
@@ -64,8 +65,8 @@ const projectData = (translateFunction?: TranslatorFunction): object => {
                 sounds: [],
                 volume: 100,
                 visible: true,
-                x: -160,
-                y: 0,
+                x: -180,
+                y: -61,
                 size: 70,
                 direction: 90,
                 draggable: false,

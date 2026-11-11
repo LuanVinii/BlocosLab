@@ -1,5 +1,20 @@
 [
     {
+        "name": "Laboratório Espacial",
+        "assetId": "91dc085aa42f8accb73026491509ee95",
+        "md5ext": "91dc085aa42f8accb73026491509ee95.png",
+        "dataFormat": "png",
+        "bitmapResolution": 2,
+        "rotationCenterX": 480,
+        "rotationCenterY": 360,
+        "rawURL": "/static/assets/blocoslab-cenario.png",
+        "tags": [
+            "blocoslab",
+            "tecnologia",
+            "espaço"
+        ]
+    },
+    {
         "name": "Arctic",
         "assetId": "67e0db3305b3c8bac3a363b1c428892e",
         "md5ext": "67e0db3305b3c8bac3a363b1c428892e.png",

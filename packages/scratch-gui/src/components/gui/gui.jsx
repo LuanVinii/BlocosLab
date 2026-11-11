@@ -477,9 +477,6 @@ const GUIComponent = props => {
                                                 id="gui.gui.soundsTab"
                                             />
                                         </Tab>
-                                        <li className={styles.workspaceControls}>
-                                            <Controls vm={vm} />
-                                        </li>
                                     </TabList>
                                 </Box>
                                 <TabPanel
@@ -505,7 +502,13 @@ const GUIComponent = props => {
                                             vm={vm}
                                             colorMode={colorMode}
                                         />
-                                        <KitRoboticaButton vm={vm} />
+                                        <div className={styles.executionCapsule}>
+                                            <Controls
+                                                className={styles.executionControls}
+                                                vm={vm}
+                                            />
+                                            <KitRoboticaButton vm={vm} />
+                                        </div>
                                         <Watermark
                                             className={styles.blocksWatermark}
                                             vm={vm}

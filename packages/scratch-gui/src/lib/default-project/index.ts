@@ -4,6 +4,7 @@ import {TranslatorFunction} from '../../gui-config';
 
 import robotCostume from '!arraybuffer-loader!../../../../../images/ator-principal-scratch.png?';
 import blankStage from '!arraybuffer-loader!./cd21514d0531fdffb22204e0ec5ed84a.svg?';
+import libraryBackdrop from '!arraybuffer-loader!../../../static/assets/blocoslab-cenario.png?';
 
 
 const defaultProject = (translator?: TranslatorFunction) => {
@@ -26,6 +27,16 @@ const defaultProject = (translator?: TranslatorFunction) => {
         assetType: 'ImageBitmap',
         dataFormat: 'PNG',
         data: new Uint8Array(robotCostume)
+    }, {
+        id: '52d62fbe8fbb225e3a891dd081d41ce3',
+        assetType: 'ImageBitmap',
+        dataFormat: 'PNG',
+        data: new Uint8Array(robotCostume)
+    }, {
+        id: '91dc085aa42f8accb73026491509ee95',
+        assetType: 'ImageBitmap',
+        dataFormat: 'PNG',
+        data: new Uint8Array(libraryBackdrop)
     }];
 };
 
