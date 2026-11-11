@@ -137,6 +137,11 @@
     gap: 0.6rem;
 }
 
+.execution-capsule:has(> .execution-controls + *) {
+    gap: 0.6rem;
+    padding: 0.35rem 0.875rem;
+}
+
 .execution-controls > button:first-child,
 .execution-controls > button:nth-child(2) {
     display: flex;
