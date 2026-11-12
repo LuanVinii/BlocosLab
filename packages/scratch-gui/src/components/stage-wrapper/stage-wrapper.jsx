@@ -31,6 +31,7 @@ const StageWrapperComponent = function (props) {
         showNewFeatureCallouts,
         onActivateCostumesTab,
         onActivateSoundsTab,
+        onActivateCodeTab,
         targetIsStage,
         vm
     } = props;
@@ -53,6 +54,7 @@ const StageWrapperComponent = function (props) {
                     onSetManualThumbnailButtonClick={onSetManualThumbnailButtonClick}
                     onActivateCostumesTab={onActivateCostumesTab}
                     onActivateSoundsTab={onActivateSoundsTab}
+                    onActivateCodeTab={onActivateCodeTab}
                     username={username}
                     userOwnsProject={userOwnsProject}
                     loadingOrCreating={loading || isCreating}
@@ -95,6 +97,7 @@ StageWrapperComponent.propTypes = {
     showNewFeatureCallouts: PropTypes.bool,
     onActivateCostumesTab: PropTypes.func,
     onActivateSoundsTab: PropTypes.func,
+    onActivateCodeTab: PropTypes.func,
     targetIsStage: PropTypes.bool,
     username: PropTypes.string,
     userOwnsProject: PropTypes.bool,

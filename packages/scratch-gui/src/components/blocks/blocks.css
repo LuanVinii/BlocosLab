@@ -25,14 +25,14 @@
     bottom: 0;
     left: 0;
     border: 1px solid $ui-black-transparent;
-    border-top-right-radius: $space;
+    border-top-right-radius: 0;
     border-bottom-right-radius: $space;
 }
 
 [dir="rtl"] .blocks :global(.injectionDiv) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    border-top-left-radius: $space;
+    border-top-left-radius: 0;
     border-bottom-left-radius: $space;
 }
 
@@ -67,7 +67,6 @@
 */
 .blocks :global(.blocklyToolbox),
 .blocks :global(.blocklyToolboxDiv) {
-    border-right: 1px solid $ui-black-transparent;
     border-bottom: 1px solid $ui-black-transparent;
     box-sizing: border-box;
     height: 100% !important;
@@ -84,8 +83,7 @@
 
 [dir="rtl"] .blocks :global(.blocklyToolbox),
 [dir="rtl"] .blocks :global(.blocklyToolboxDiv) {
-    border-right: none;
-    border-left: 1px solid $ui-black-transparent;
+    border-left: none;
 }
 
 .blocks :global(.blocklyToolbox::-webkit-scrollbar),
@@ -94,18 +92,29 @@
 }
 
 .blocks :global(.blocklyFlyout) {
-    border-right: 1px solid $ui-black-transparent;
     box-sizing: content-box;
+    overflow: visible;
+}
+
+.blocks :global(.blocklyFlyoutBackground) {
+    fill: #e7eef7 !important;
 }
 
 [dir="rtl"] .blocks :global(.blocklyFlyout) {
-    border-right: none;
-    border-left: 1px solid $ui-black-transparent;
+    border-left: none;
 }
 
 
 .blocks :global(.blocklyBlockDragSurface) {
     z-index: $z-index-drag-layer; /* make blocks match gui drag layer */
+}
+
+.blocks :global(.blocklyFlyoutScrollbar) {
+    z-index: 30;
+}
+
+.blocks :global(.blocklyFlyoutScrollbar .blocklyScrollbarHandle) {
+    fill: #bbb !important;
 }
 
 /*
@@ -115,6 +124,10 @@
 */
 .blocks :global(.scratchCategoryMenuItemLabel) {
     font-size: 0.65rem;
+}
+
+.blocks :global(.blocklyFlyoutLabelText) {
+    transform: translateY(7px);
 }
 
 .blocks :global(.blocklyMinimalBody) {

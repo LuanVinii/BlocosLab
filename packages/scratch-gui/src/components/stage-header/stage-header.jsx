@@ -23,6 +23,7 @@ import throttle from 'lodash.throttle';
 import thumbnailIcon from './icon--thumbnail.svg';
 import costumesIcon from '../icons/lucide/layers-2.svg';
 import soundsIcon from '../icons/lucide/audio-lines.svg';
+import codeIcon from '../icons/lucide/blocks.svg';
 import ConfirmationPrompt from '../confirmation-prompt/confirmation-prompt.jsx';
 import FeatureCalloutPopover from '../feature-callout-popover/feature-callout-popover.jsx';
 import classNames from 'classnames';
@@ -94,6 +95,11 @@ const messages = defineMessages({
         defaultMessage: 'Sons',
         description: 'Aba de sons do ator',
         id: 'gui.stageHeader.soundsTab'
+    },
+    codeTab: {
+        defaultMessage: 'Código',
+        description: 'Aba do editor de blocos',
+        id: 'gui.stageHeader.codeTab'
     }
 });
 
@@ -104,6 +110,7 @@ const StageHeaderComponent = function (props) {
         activeTabIndex,
         onActivateCostumesTab,
         onActivateSoundsTab,
+        onActivateCodeTab,
         targetIsStage,
         manuallySaveThumbnails,
         onSetManualThumbnail,
@@ -311,6 +318,18 @@ const StageHeaderComponent = function (props) {
                         <div className={styles.editorTabs} role="tablist" aria-label="Painéis do projeto">
                             <button
                                 className={classNames(styles.editorTab, {
+                                    [styles.editorTabActive]: activeTabIndex === 0
+                                })}
+                                type="button"
+                                role="tab"
+                                aria-selected={activeTabIndex === 0}
+                                onClick={onActivateCodeTab}
+                            >
+                                <img src={codeIcon} alt="" aria-hidden="true" />
+                                {intl.formatMessage(messages.codeTab)}
+                            </button>
+                            <button
+                                className={classNames(styles.editorTab, {
                                     [styles.editorTabActive]: activeTabIndex === 1
                                 })}
                                 type="button"
@@ -428,6 +447,7 @@ StageHeaderComponent.propTypes = {
     username: PropTypes.string,
     onActivateCostumesTab: PropTypes.func,
     onActivateSoundsTab: PropTypes.func,
+    onActivateCodeTab: PropTypes.func,
     targetIsStage: PropTypes.bool,
     onShowSettingThumbnail: PropTypes.func,
     onShowThumbnailError: PropTypes.func,

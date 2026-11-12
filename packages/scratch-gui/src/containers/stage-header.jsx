@@ -54,6 +54,7 @@ StageHeader.propTypes = {
     isPlayerOnly: PropTypes.bool,
     onActivateCostumesTab: PropTypes.func,
     onActivateSoundsTab: PropTypes.func,
+    onActivateCodeTab: PropTypes.func,
     onSetStageUnFull: PropTypes.func.isRequired,
     showBranding: PropTypes.bool,
     stageSizeMode: PropTypes.oneOf(Object.keys(STAGE_SIZE_MODES)),

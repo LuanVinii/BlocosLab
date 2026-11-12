@@ -9,6 +9,7 @@ import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
 import tabStyles from 'react-tabs/style/react-tabs.css';
 import VM from '@scratch/scratch-vm';
 import Renderer from '@scratch/scratch-render';
+import * as ScratchBlocks from 'scratch-blocks';
 
 import Blocks from '../../containers/blocks.jsx';
 import Controls from '../../containers/controls.jsx';
@@ -109,6 +110,19 @@ const ariaMessages = defineMessages({
     }
 });
 
+const toolboxToggleMessages = defineMessages({
+    hide: {
+        id: 'gui.gui.hideBlockCategories',
+        defaultMessage: 'Ocultar tipos de blocos',
+        description: 'Accessible label for hiding the block categories and palette'
+    },
+    show: {
+        id: 'gui.gui.showBlockCategories',
+        defaultMessage: 'Mostrar tipos de blocos',
+        description: 'Accessible label for showing the block categories and palette'
+    }
+});
+
 // Cache this value to only retrieve it once the first time.
 // Assume that it doesn't change for a session.
 let isRendererSupported = null;
@@ -116,6 +130,7 @@ let isRendererSupported = null;
 const GUIComponent = props => {
     const intl = useIntl();
     const [showLoading, setShowLoading] = useState(props.loading);
+    const [toolboxCollapsed, setToolboxCollapsed] = useState(false);
     useEffect(() => {
         if (props.loading) {
             setShowLoading(true);
@@ -124,6 +139,21 @@ const GUIComponent = props => {
         const timeoutId = setTimeout(() => setShowLoading(false), 4000);
         return () => clearTimeout(timeoutId);
     }, [props.loading]);
+    const handleToolboxToggle = useCallback(() => {
+        const workspace = ScratchBlocks.getMainWorkspace();
+        const toolbox = workspace && workspace.getToolbox();
+        if (!toolbox) return;
+
+        if (!toolboxCollapsed) {
+            const flyout = toolbox.getFlyout();
+            if (flyout) flyout.hide();
+        } else {
+            toolbox.forceRerender();
+            ScratchBlocks.svgResize(workspace);
+        }
+        setToolboxCollapsed(!toolboxCollapsed);
+    }, [toolboxCollapsed]);
+
     const {
         accountMenuOptions,
         activeTabIndex,
@@ -182,6 +212,7 @@ const GUIComponent = props => {
         onToggleLoginOpen,
         onActivateCostumesTab,
         onActivateSoundsTab,
+        onActivateCodeTab,
         onActivateTab,
         onClickLogo,
         onExtensionButtonClick,
@@ -421,6 +452,7 @@ const GUIComponent = props => {
                                     <TabList
                                         className={tabClassNames.tabList}
                                         role="tablist"
+                                        style={{display: 'none'}}
                                     >
                                         <Tab
                                             className={classNames(tabClassNames.tab, styles.visibleCodeTab)}
@@ -510,10 +542,24 @@ const GUIComponent = props => {
                                             <KitRoboticaButton vm={vm} />
                                         </div>
                                         <Watermark
-                                            className={styles.blocksWatermark}
+                                            className={classNames(styles.blocksWatermark, {
+                                                [styles.blocksWatermarkCollapsed]: toolboxCollapsed
+                                            })}
                                             vm={vm}
                                         />
                                     </Box>
+                                    <button
+                                        className={styles.toolboxToggleButton}
+                                        type="button"
+                                        title={intl.formatMessage(toolboxCollapsed ? toolboxToggleMessages.show :
+                                            toolboxToggleMessages.hide)}
+                                        aria-label={intl.formatMessage(toolboxCollapsed ? toolboxToggleMessages.show :
+                                            toolboxToggleMessages.hide)}
+                                        aria-pressed={toolboxCollapsed}
+                                        onClick={handleToolboxToggle}
+                                    >
+                                        <span aria-hidden="true">{toolboxCollapsed ? '›' : '‹'}</span>
+                                    </button>
                                     <ExtensionsButton
                                         intl={intl}
                                         onExtensionButtonClick={onExtensionButtonClick}
@@ -574,6 +620,7 @@ const GUIComponent = props => {
                                 loading={loading}
                                 showNewFeatureCallouts={showNewFeatureCallouts}
                                 activeTabIndex={activeTabIndex}
+                                onActivateCodeTab={onActivateCodeTab}
                                 onActivateCostumesTab={onActivateCostumesTab}
                                 onActivateSoundsTab={onActivateSoundsTab}
                                 targetIsStage={targetIsStage}
@@ -652,6 +699,7 @@ GUIComponent.propTypes = {
     menuBarHidden: PropTypes.bool,
     onActivateCostumesTab: PropTypes.func,
     onActivateSoundsTab: PropTypes.func,
+    onActivateCodeTab: PropTypes.func,
     onActivateTab: PropTypes.func,
     onClickLogo: PropTypes.func,
     onExtensionButtonClick: PropTypes.func,
